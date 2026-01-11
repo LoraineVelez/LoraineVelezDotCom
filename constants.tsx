@@ -6,33 +6,41 @@ export const PROJECTS: Project[] = [
     id: 'p1',
     title: 'Aether Canvas',
     year: '2024',
-    description: 'A generative art platform focused on procedural textures and minimal aesthetics. Built with WebGL and React. The scope involved creating a custom rendering engine that translates user brush strokes into mathematical noise patterns.',
+    description: 'A generative art platform focused on procedural textures and minimal aesthetics.',
+    details: 'WebGL rendering engine and React-based design systems.',
     tags: ['Web Design', 'Development', 'Generative Art'],
-    image: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200',
+    url: 'https://example.com'
   },
   {
     id: 'p2',
     title: 'Mono Journal',
     year: '2023',
-    description: 'A minimalist publishing system for long-form essays. We focused on high-legibility typography and a "distraction-free" writing interface. The project scope covered the full design system and CMS integration.',
+    description: 'A minimalist publishing system for long-form essays and digital literature.',
+    details: 'Typography-first UI/UX with headless CMS integration.',
     tags: ['UX Design', 'Branding', 'CMS'],
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=1200',
+    url: 'https://example.com'
   },
   {
     id: 'p3',
     title: 'Flow State',
     year: '2023',
-    description: 'A task management tool that visualizes project progression as fluid animations. The scope was to rethink traditional kanban boards into a more organic, time-based visualization.',
+    description: 'A task management tool that visualizes project progression as fluid animations.',
+    details: 'Product design strategy and custom motion library development.',
     tags: ['Product Design', 'Interface'],
-    image: 'https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=1200',
+    url: 'https://example.com'
   },
   {
     id: 'p4',
     title: 'Kinetic Type',
     year: '2022',
-    description: 'An interactive typography experiment. The scope involved developing a library of motion-based glyphs that react to cursor proximity and scroll velocity.',
+    description: 'An interactive typography experiment showcasing the intersection of code and glyphs.',
+    details: 'Physics-based typography library reacting to scroll velocity.',
     tags: ['Motion Design', 'Frontend'],
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1200',
+    url: 'https://example.com'
   }
 ];
 

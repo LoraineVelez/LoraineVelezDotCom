@@ -72,11 +72,25 @@ const ProductCard: React.FC<{ product: any }> = ({ product }) => {
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
             alt={product.name}
          />
-         {isPrint && (
-           <div className="absolute top-4 left-4 bg-white px-3 py-1 text-[9px] font-black uppercase tracking-widest border border-black shadow-sm">
-             Open Edition
-           </div>
-         )}
+         
+         {/* Top Labels Container */}
+         <div className="absolute top-4 left-4 right-4 flex justify-between items-start pointer-events-none">
+           {isPrint && (
+             <div className="bg-white px-3 py-1 text-[9px] font-black uppercase tracking-widest border border-black shadow-sm pointer-events-auto">
+               Open Edition
+             </div>
+           )}
+           
+           {isPrint && (
+             <div className="bg-white px-3 py-1 flex items-center space-x-2 text-[9px] font-black uppercase tracking-widest border border-black shadow-sm pointer-events-auto">
+               <span className="relative flex h-2 w-2">
+                 <span className="animate-glow absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+               </span>
+               <span>In Stock</span>
+             </div>
+           )}
+         </div>
       </div>
       
       <div className="flex-1 space-y-4 flex flex-col">
@@ -90,7 +104,7 @@ const ProductCard: React.FC<{ product: any }> = ({ product }) => {
 
         <div className="h-px w-full bg-black/10"></div>
         
-        <button className="w-full py-4 bg-black text-white font-black uppercase tracking-widest text-[11px] border-2 border-black hover:bg-white hover:text-black transition-all duration-300 active:scale-[0.97]">
+        <button className="w-full py-4 bg-black text-white font-black uppercase tracking-widest text-[11px] border-2 border-black hover:bg-white hover:text-black transition-all duration-300 active:scale-[0.97] cursor-none">
           {buttonLabel}
         </button>
       </div>
