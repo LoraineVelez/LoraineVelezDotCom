@@ -9,7 +9,7 @@ interface Props {
 
 const ShopArtSection: React.FC<Props> = ({ isVisible }) => {
   return (
-    <div className="w-full min-h-full flex flex-col items-center bg-white px-6 md:px-12 pt-24 pb-8 md:pt-32 md:pb-14">
+    <div className="w-full min-h-full flex flex-col items-center bg-white px-6 md:px-12 pt-24 pb-20 md:pt-32 md:pb-24">
       <motion.div 
         animate={{ opacity: isVisible ? 1 : 0 }}
         className="max-w-7xl w-full space-y-12 md:space-y-16 pb-10"

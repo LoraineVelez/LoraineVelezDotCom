@@ -15,7 +15,7 @@ const ShopBooksSection: React.FC<Props> = ({ isVisible }) => {
     <div className="w-full min-h-full flex flex-col bg-white overflow-x-hidden">
       <motion.div 
         animate={{ opacity: isVisible ? 1 : 0 }}
-        className="max-w-6xl mx-auto w-full px-6 pt-24 pb-10 md:pt-32 md:pb-16 space-y-12 md:space-y-16"
+        className="max-w-6xl mx-auto w-full px-6 pt-24 pb-24 md:pt-32 md:pb-28 space-y-12 md:space-y-16"
       >
         {/* --- Minimal Editorial Header --- */}
         <header className="space-y-4">

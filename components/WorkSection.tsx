@@ -36,7 +36,7 @@ const WorkSection: React.FC<Props> = ({ isVisible }) => {
       <motion.div 
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 10 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-6xl w-full flex flex-col space-y-8 md:space-y-16 pb-12"
+        className="max-w-6xl w-full flex flex-col space-y-8 md:space-y-16 pb-24 md:pb-32"
       >
         {/* --- REFINED STRETCHED HEADER --- */}
         <header className="relative pt-24 md:pt-32 space-y-3">

@@ -11,7 +11,7 @@ const InfoSection: React.FC<Props> = ({ isVisible }) => {
   const mailtoLink = `mailto:lorainevelezlugo@gmail.com?body=${encodeURIComponent(prefilledMessage)}`;
 
   return (
-    <div className="w-full min-h-full flex flex-col items-center bg-white px-6 pt-24 pb-6 md:pt-32 md:pb-10">
+    <div className="w-full min-h-full flex flex-col items-center bg-white px-6 pt-24 pb-20 md:pt-32 md:pb-24">
       <motion.div 
         animate={{ opacity: isVisible ? 1 : 0 }}
         className="max-w-4xl w-full space-y-10 md:space-y-14"
