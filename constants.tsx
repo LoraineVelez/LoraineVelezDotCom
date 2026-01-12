@@ -45,10 +45,52 @@ export const PROJECTS: Project[] = [
 ];
 
 export const PRODUCTS: Product[] = [
-  { id: 'sh1', name: 'Midnight Solace', price: '$45.00', type: 'PRINT', image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&q=80&w=600' },
-  { id: 'sh2', name: 'Temporal Drift', price: '$350.00', type: 'ORIGINAL', image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=600' },
-  { id: 'sh3', name: 'Inner Dialogues', price: '$32.00', type: 'BOOK', image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=600' },
-  { id: 'sh4', name: 'Fractured Silence', price: '$45.00', type: 'PRINT', image: 'https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=600' },
-  { id: 'sh5', name: 'Echoes of Light', price: '$280.00', type: 'ORIGINAL', image: 'https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&q=80&w=600' },
-  { id: 'sh6', name: 'Shapes of Thought', price: '$12.00', type: 'PRINT', image: 'https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&q=80&w=600' }
+  { 
+    id: 'sh1', 
+    name: 'Internal Review', 
+    price: '$55.00', 
+    type: 'PRINT', 
+    image: 'https://i.ibb.co/nNvwg8Cg/Photos-for-Website-Shop.png',
+    description: '12 x 12 archival print, frame ready'
+  },
+  { 
+    id: 'sh2', 
+    name: 'Temporal Drift', 
+    price: '$350.00', 
+    type: 'ORIGINAL', 
+    image: 'https://i.ibb.co/0jHqGrMh/COOMING-SOON-SHOP-43.png',
+    description: 'Original acrylic on canvas, 24 x 36'
+  },
+  { 
+    id: 'sh3', 
+    name: 'Inner Dialogues', 
+    price: '$32.00', 
+    type: 'BOOK', 
+    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=600',
+    description: 'Hardcover, linen wrap edition'
+  },
+  { 
+    id: 'sh4', 
+    name: 'COMING SOON', 
+    price: '---', 
+    type: 'PRINT', 
+    image: 'https://i.ibb.co/GQsc9s4M/SHOP-ITEM-COMING-SOON.png',
+    description: '12 x 12 archival print, frame ready'
+  },
+  { 
+    id: 'sh5', 
+    name: 'Echoes of Light', 
+    price: '$280.00', 
+    type: 'ORIGINAL', 
+    image: 'https://i.ibb.co/0jHqGrMh/COOMING-SOON-SHOP-43.png',
+    description: 'Original acrylic on canvas, 18 x 24'
+  },
+  { 
+    id: 'sh6', 
+    name: 'COMING SOON', 
+    price: '---', 
+    type: 'PRINT', 
+    image: 'https://i.ibb.co/GQsc9s4M/SHOP-ITEM-COMING-SOON.png',
+    description: '12 x 12 archival print, frame ready'
+  }
 ];

@@ -122,10 +122,19 @@ const App: React.FC = () => {
         </div>
       </motion.div>
 
-      <div className="fixed bottom-12 right-4 md:bottom-12 md:right-8 pointer-events-none text-right z-50">
-        <span className="handwritten text-2xl md:text-4xl font-bold opacity-30 select-none">L. Velez</span>
-        <div className="w-16 md:w-24 h-1 bg-black rounded-full mt-1 opacity-10 ml-auto"></div>
-      </div>
+      <AnimatePresence>
+        {view === 'HOME' && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed bottom-12 right-4 md:bottom-12 md:right-8 pointer-events-none text-right z-50"
+          >
+            <span className="handwritten text-2xl md:text-4xl font-bold opacity-30 select-none">L. Velez</span>
+            <div className="w-16 md:w-24 h-1 bg-black rounded-full mt-1 opacity-10 ml-auto"></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className="fixed bottom-0 left-0 w-full py-2 px-4 flex justify-center items-center pointer-events-none z-[60] bg-black">
         <span className="text-[6.5px] min-[370px]:text-[8px] md:text-[10px] font-bold tracking-[0.05em] min-[370px]:tracking-[0.15em] uppercase text-center text-white whitespace-nowrap">

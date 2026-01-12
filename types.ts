@@ -18,4 +18,5 @@ export interface Product {
   price: string;
   type: 'PRINT' | 'ORIGINAL' | 'BOOK';
   image: string;
+  description?: string;
 }
