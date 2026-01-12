@@ -1,4 +1,3 @@
-
 import { Project, Product } from './types';
 
 export const PROJECTS: Project[] = [
@@ -51,7 +50,8 @@ export const PRODUCTS: Product[] = [
     price: '$55.00', 
     type: 'PRINT', 
     image: 'https://i.ibb.co/nNvwg8Cg/Photos-for-Website-Shop.png',
-    description: '12 x 12 archival print, frame ready'
+    description: '12 x 12 archival print, frame ready',
+    availability: 'IN_STOCK'
   },
   { 
     id: 'sh2', 
@@ -59,15 +59,17 @@ export const PRODUCTS: Product[] = [
     price: '$350.00', 
     type: 'ORIGINAL', 
     image: 'https://i.ibb.co/0jHqGrMh/COOMING-SOON-SHOP-43.png',
-    description: 'Original acrylic on canvas, 24 x 36'
+    description: 'Original acrylic on canvas, 24 x 36',
+    availability: 'AVAILABLE'
   },
   { 
     id: 'sh3', 
-    name: 'Inner Dialogues', 
-    price: '$32.00', 
+    name: 'Where Love Goes', 
+    price: '$18.95', 
     type: 'BOOK', 
-    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=600',
-    description: 'Hardcover, linen wrap edition'
+    image: 'https://i.ibb.co/27GCgvmF/Chat-GPT-Image-Jan-8-2026-05-06-21-PM.png',
+    description: 'A gentle journey through the landscape of childhood grief.',
+    availability: 'IN_STOCK'
   },
   { 
     id: 'sh4', 
@@ -75,7 +77,8 @@ export const PRODUCTS: Product[] = [
     price: '---', 
     type: 'PRINT', 
     image: 'https://i.ibb.co/GQsc9s4M/SHOP-ITEM-COMING-SOON.png',
-    description: '12 x 12 archival print, frame ready'
+    description: '12 x 12 archival print, frame ready',
+    availability: 'COMING_SOON'
   },
   { 
     id: 'sh5', 
@@ -83,7 +86,8 @@ export const PRODUCTS: Product[] = [
     price: '$280.00', 
     type: 'ORIGINAL', 
     image: 'https://i.ibb.co/0jHqGrMh/COOMING-SOON-SHOP-43.png',
-    description: 'Original acrylic on canvas, 18 x 24'
+    description: 'Original acrylic on canvas, 18 x 24',
+    availability: 'SOLD'
   },
   { 
     id: 'sh6', 
@@ -91,6 +95,25 @@ export const PRODUCTS: Product[] = [
     price: '---', 
     type: 'PRINT', 
     image: 'https://i.ibb.co/GQsc9s4M/SHOP-ITEM-COMING-SOON.png',
-    description: '12 x 12 archival print, frame ready'
+    description: '12 x 12 archival print, frame ready',
+    availability: 'COMING_SOON'
+  },
+  {
+    id: 'sh7',
+    name: 'COMING SOON',
+    price: '---',
+    type: 'OTHER',
+    image: 'https://i.ibb.co/GQsc9s4M/SHOP-ITEM-COMING-SOON.png',
+    description: 'Special release item',
+    availability: 'COMING_SOON'
+  },
+  {
+    id: 'sh8',
+    name: 'COMING SOON',
+    price: '---',
+    type: 'OTHER',
+    image: 'https://i.ibb.co/GQsc9s4M/SHOP-ITEM-COMING-SOON.png',
+    description: 'Special release item',
+    availability: 'COMING_SOON'
   }
 ];

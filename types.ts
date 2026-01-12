@@ -1,4 +1,3 @@
-
 export type ViewState = 'HOME' | 'INFO' | 'SHOP_ART' | 'SHOP_BOOKS' | 'WORK';
 
 export interface Project {
@@ -16,7 +15,8 @@ export interface Product {
   id: string;
   name: string;
   price: string;
-  type: 'PRINT' | 'ORIGINAL' | 'BOOK';
+  type: 'PRINT' | 'ORIGINAL' | 'BOOK' | 'OTHER';
   image: string;
   description?: string;
+  availability?: 'IN_STOCK' | 'COMING_SOON' | 'AVAILABLE' | 'SOLD';
 }

@@ -1,4 +1,3 @@
-
 import { Product } from '../types';
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -54,6 +53,18 @@ const ShopArtSection: React.FC<Props> = ({ isVisible }) => {
                  ))}
               </div>
            </div>
+
+           {/* Section 3: Other */}
+           <div className="space-y-8">
+              <div className="flex items-end justify-between border-b-2 border-black/10 pb-2">
+                 <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase italic">03. Other</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+                 {PRODUCTS.filter(p => p.type === 'OTHER').map(product => (
+                    <ProductCard key={product.id} product={product} />
+                 ))}
+              </div>
+           </div>
         </div>
       </motion.div>
     </div>
@@ -62,11 +73,41 @@ const ShopArtSection: React.FC<Props> = ({ isVisible }) => {
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const isPrint = product.type === 'PRINT';
-  const buttonLabel = isPrint ? 'Buy Print' : 'Inquire';
+  const isOriginal = product.type === 'ORIGINAL';
+  const isOther = product.type === 'OTHER';
+  
+  const status = product.availability || 'IN_STOCK';
+  const isPositive = status === 'IN_STOCK' || status === 'AVAILABLE';
+  const glowClass = isPositive ? 'bg-green-400 animate-glow' : 'bg-red-500 animate-glow-red';
+  
+  // Determine labels based on type and status
+  let statusText = '';
+  if (isPrint || isOther) {
+    statusText = status === 'IN_STOCK' ? 'IN STOCK' : 'COMING SOON';
+  } else if (isOriginal) {
+    statusText = status === 'AVAILABLE' ? 'AVAILABLE' : 'SOLD';
+  }
+
+  const typeLabel = product.type;
+  const buttonLabel = isPrint || isOther ? (status === 'IN_STOCK' ? 'Buy Now' : 'Notify Me') : (status === 'AVAILABLE' ? 'Inquire' : 'Private Collection');
 
   return (
     <div className="group flex flex-col h-full bg-white transition-all duration-500">
       <div className="aspect-[4/5] bg-gray-50 overflow-hidden relative mb-4 border-[1px] border-black/5">
+         {/* Status Overlays - Now spread to opposite sides */}
+         <div className="absolute top-3 left-3 right-3 flex justify-between items-start z-10">
+            {/* Type Label (Left) */}
+            <div className="bg-black text-white px-2 py-1 text-[8px] font-black uppercase tracking-widest w-fit shadow-sm">
+                {typeLabel}
+            </div>
+
+            {/* Status Indicator (Right) */}
+            <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm border border-black px-2 py-1 shadow-sm">
+                <div className={`w-2 h-2 rounded-full ${glowClass}`}></div>
+                <span className="text-[8px] font-black uppercase tracking-widest leading-none">{statusText}</span>
+            </div>
+         </div>
+
          <img 
             src={product.image} 
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
@@ -85,7 +126,13 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           <span className="text-lg font-black tracking-tight">{product.price}</span>
         </div>
 
-        <button className="w-full py-3 bg-black text-white font-black uppercase tracking-widest text-[10px] border-2 border-black hover:bg-white hover:text-black transition-all active:scale-[0.97] cursor-none">
+        <button 
+          className={`w-full py-3 font-black uppercase tracking-widest text-[10px] border-2 border-black transition-all active:scale-[0.97] cursor-none ${
+            isPositive 
+              ? 'bg-black text-white hover:bg-white hover:text-black' 
+              : 'bg-white text-black hover:bg-black hover:text-white'
+          }`}
+        >
           {buttonLabel}
         </button>
       </div>
