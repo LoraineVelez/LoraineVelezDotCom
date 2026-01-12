@@ -15,7 +15,7 @@ const ShopBooksSection: React.FC<Props> = ({ isVisible }) => {
     <div className="w-full min-h-full flex flex-col bg-white overflow-x-hidden">
       <motion.div 
         animate={{ opacity: isVisible ? 1 : 0 }}
-        className="max-w-6xl mx-auto w-full px-6 py-10 md:py-16 space-y-12 md:space-y-16"
+        className="max-w-6xl mx-auto w-full px-6 pt-24 pb-10 md:pt-32 md:pb-16 space-y-12 md:space-y-16"
       >
         {/* --- Minimal Editorial Header --- */}
         <header className="space-y-4">
@@ -102,14 +102,14 @@ const ShopBooksSection: React.FC<Props> = ({ isVisible }) => {
             </div>
 
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div className="relative w-full max-sm:max-w-xs md:max-w-md aspect-[3/4] bg-gray-50 flex items-center justify-center p-6 border border-black/5 shadow-2xl transform rotate-2">
+              <div className="relative w-full max-sm:max-w-xs md:max-w-md">
                 <img 
                   src={featuredBook.image} 
                   alt={featuredBook.name} 
-                  className="w-full h-full object-contain shadow-[20px_20px_40px_rgba(0,0,0,0.1)]" 
+                  className="w-full h-auto object-contain border-4 border-white shadow-[20px_20px_60px_rgba(0,0,0,0.15)]" 
                 />
-                <div className="absolute -top-4 -right-4 bg-black text-white w-16 h-16 rounded-full flex items-center justify-center -rotate-12 border-4 border-white">
-                  <span className="font-black text-[10px] uppercase tracking-tighter text-center leading-none">New<br/>Drop</span>
+                <div className="absolute -top-6 -right-6 bg-black text-white w-20 h-20 rounded-full flex items-center justify-center -rotate-12 border-4 border-white shadow-xl z-10">
+                  <span className="font-black text-[11px] uppercase tracking-tighter text-center leading-none">New<br/>Drop</span>
                 </div>
               </div>
             </div>
@@ -166,17 +166,20 @@ const ShopBooksSection: React.FC<Props> = ({ isVisible }) => {
               <div className="space-y-2 w-full">
                 <div className="h-0.5 w-12 bg-white/40 mb-3 mx-auto md:mx-0"></div>
                 <p className="text-lg md:text-xl font-bold leading-relaxed tracking-tight text-justify">
-                  Big Feelings Book Co. is a children’s publishing imprint by Loraine Velez creating books as tools for adults to support the emotional development of children.
+                  Big Feelings Book Co., created by Loraine Velez, is an independent children’s publisher focused on story-driven books that support emotional understanding, with an emphasis on Latin American and Hispanic voices. The imprint creates gentle tools to help children and caregivers navigate difficult moments with care and clarity.
                 </p>
                 <div className="flex justify-end pt-1">
                    <span className="handwritten text-xl opacity-60">est. 2026</span>
                 </div>
               </div>
               
-              <motion.button 
+              <motion.a 
+                href="https://bigfeelingsbookco.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.08, boxShadow: "0px 15px 35px rgba(0,0,0,0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-12 py-4 bg-white text-[#E30B5D] font-black uppercase tracking-[0.25em] text-[10px] hover:bg-transparent hover:text-white border-2 border-white transition-all shadow-2xl cursor-none relative overflow-hidden group/btn"
+                className="px-12 py-4 bg-white text-[#E30B5D] font-black uppercase tracking-[0.25em] text-[10px] hover:bg-transparent hover:text-white border-2 border-white transition-all shadow-2xl cursor-none relative overflow-hidden group/btn inline-flex items-center justify-center"
               >
                 <span className="relative z-10">learn more</span>
                 <motion.div 
@@ -187,7 +190,7 @@ const ShopBooksSection: React.FC<Props> = ({ isVisible }) => {
                    }}
                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                 />
-              </motion.button>
+              </motion.a>
             </div>
             
             <div className="w-full max-w-md aspect-square bg-black/20 p-2 md:p-4 shadow-2xl relative overflow-hidden">
@@ -208,7 +211,7 @@ const ShopBooksSection: React.FC<Props> = ({ isVisible }) => {
             <span className="handwritten text-4xl md:text-5xl opacity-20 italic">L. Velez</span>
             <div className="w-12 h-1 bg-black opacity-10 rounded-full"></div>
           </div>
-          <span className="text-[9px] font-black uppercase tracking-[0.4em] opacity-30">Print // 2026</span>
+          <span className="text-[9px] font-black uppercase tracking-[0.4em] opacity-30">Printed Matter // 2026</span>
         </footer>
       </motion.div>
     </div>

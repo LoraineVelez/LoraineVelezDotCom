@@ -11,7 +11,7 @@ const InfoSection: React.FC<Props> = ({ isVisible }) => {
   const mailtoLink = `mailto:lorainevelezlugo@gmail.com?body=${encodeURIComponent(prefilledMessage)}`;
 
   return (
-    <div className="w-full min-h-full flex flex-col items-center bg-white px-6 py-6 md:py-10">
+    <div className="w-full min-h-full flex flex-col items-center bg-white px-6 pt-24 pb-6 md:pt-32 md:pb-10">
       <motion.div 
         animate={{ opacity: isVisible ? 1 : 0 }}
         className="max-w-4xl w-full space-y-10 md:space-y-14"
@@ -19,13 +19,13 @@ const InfoSection: React.FC<Props> = ({ isVisible }) => {
         {/* --- SECTION 01: WEBSITE INFO --- */}
         <section className="space-y-4">
           <div className="flex items-center space-x-4">
-            <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">Index 0.1 // The Container</span>
+            <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em]">Index 0.1 // ABOUT THIS SITE</span>
             <div className="h-[1px] flex-1 bg-black/10"></div>
           </div>
           
           <div className="space-y-4">
             <h2 className="text-6xl md:text-[8rem] font-black tracking-tighter uppercase leading-[0.75] m-0 italic">
-              THE BRAIN.
+              INFO.
             </h2>
             <div className="max-w-3xl">
               <p className="text-2xl md:text-3xl font-bold leading-[1.1] tracking-tight">
@@ -34,7 +34,7 @@ const InfoSection: React.FC<Props> = ({ isVisible }) => {
               <div className="mt-4 flex items-start space-x-6">
                 <div className="w-1.5 h-12 bg-black mt-2"></div>
                 <p className="text-base md:text-lg font-medium leading-tight opacity-60 italic">
-                  Art, books, websites, and experiments live here side by side, connected by how they’re made.
+                  Art, children's books, websites, and experiments live here side by side, connected by how they’re made.
                 </p>
               </div>
             </div>
@@ -50,8 +50,8 @@ const InfoSection: React.FC<Props> = ({ isVisible }) => {
             {/* Bio Column */}
             <div className="flex-1 space-y-6">
               <div className="space-y-1">
-                <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">ABOUT<br/>LORAINE.</h3>
-                <span className="handwritten text-xl md:text-2xl opacity-40 block">a lifelong student of curiosity</span>
+                <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">ABOUT<br/>LORAINE VELEZ</h3>
+                <span className="handwritten text-xl md:text-2xl opacity-40 block">I make things, period.</span>
               </div>
 
               <div className="space-y-4 text-sm md:text-base font-medium leading-relaxed">
@@ -122,10 +122,11 @@ const InfoSection: React.FC<Props> = ({ isVisible }) => {
               <h4 className="text-2xl md:text-3xl font-black tracking-tighter uppercase">CORE SKILLS.</h4>
               <ul className="space-y-2">
                 {[
-                  "Brainstorming and sketching",
                   "Concept development",
                   "Branding systems",
-                  "Brand applications"
+                  "Visual design and layout",
+                  "UX for small business and creators"
+                  "Illustration and painting"
                 ].map((skill, i) => (
                   <li key={i} className="flex items-center space-x-2">
                     <div className="w-3.5 h-3.5 marker-box flex items-center justify-center font-black text-[7px] bg-black text-white">✓</div>
@@ -184,7 +185,7 @@ const InfoSection: React.FC<Props> = ({ isVisible }) => {
           <div className="flex flex-col items-center space-y-6">
             <div className="max-w-xl text-center space-y-3">
                <h4 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.8] mb-2">
-                  CONTACT.
+                  LET'S CHAT.
                 </h4>
               <p className="text-sm md:text-base font-bold leading-relaxed italic max-w-lg mx-auto">
                 “We love friendly networking. If you want to work together and create a better world by bringing your ideas to life, don’t hesitate to send me a message.”

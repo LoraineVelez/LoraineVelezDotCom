@@ -9,21 +9,21 @@ interface Props {
 
 const ShopArtSection: React.FC<Props> = ({ isVisible }) => {
   return (
-    <div className="w-full min-h-full flex flex-col items-center bg-white px-6 md:px-12 py-8 md:py-14">
+    <div className="w-full min-h-full flex flex-col items-center bg-white px-6 md:px-12 pt-24 pb-8 md:pt-32 md:pb-14">
       <motion.div 
         animate={{ opacity: isVisible ? 1 : 0 }}
-        className="max-w-7xl w-full space-y-12 md:space-y-16 pb-10 pt-10 md:pt-0"
+        className="max-w-7xl w-full space-y-12 md:space-y-16 pb-10"
       >
         {/* Section Header */}
         <div className="flex flex-col md:flex-row items-baseline justify-between gap-4 border-b-4 border-black pb-6">
            <div className="space-y-1">
              <h2 className="text-7xl md:text-[8rem] font-black tracking-tighter leading-none m-0">ART.</h2>
-             <span className="handwritten text-2xl md:text-3xl italic text-black/40 block ml-1">physical artifacts</span>
+             <span className="handwritten text-2xl md:text-3xl italic text-black/40 block ml-1">Curated Collection</span>
            </div>
            <div className="max-w-xs md:text-right">
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] block mb-1">Curated Collection</span>
+              <span className="text-[9px] font-black uppercase tracking-[0.3em] block mb-1">Prints, Original Works & More</span>
               <p className="text-xs md:text-sm font-medium leading-relaxed opacity-70">
-                A selection of limited edition prints and paintings explored through light and form.
+               A selection of limited edition prints, original artwork, and occasional objects, produced in limited quantities.
               </p>
            </div>
         </div>

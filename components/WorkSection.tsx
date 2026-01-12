@@ -39,7 +39,7 @@ const WorkSection: React.FC<Props> = ({ isVisible }) => {
         className="max-w-6xl w-full flex flex-col space-y-8 md:space-y-16 pb-12"
       >
         {/* --- REFINED STRETCHED HEADER --- */}
-        <header className="relative pt-16 md:pt-24 space-y-3">
+        <header className="relative pt-24 md:pt-32 space-y-3">
           <div className="flex flex-col space-y-3">
             <div className="flex items-center justify-between w-full border-b border-black pb-1.5">
               <div className="flex items-center space-x-2">
