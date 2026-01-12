@@ -125,7 +125,7 @@ const InfoSection: React.FC<Props> = ({ isVisible }) => {
                   "Concept development",
                   "Branding systems",
                   "Visual design and layout",
-                  "UX for small business and creators"
+                  "UX for small business and creators",
                   "Illustration and painting"
                 ].map((skill, i) => (
                   <li key={i} className="flex items-center space-x-2">
