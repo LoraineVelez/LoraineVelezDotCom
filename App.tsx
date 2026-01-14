@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ViewState } from './types';
 import InfoSection from './components/InfoSection';
@@ -10,6 +10,22 @@ import PaintCursor from './components/PaintCursor';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>('HOME');
+  const [showNote, setShowNote] = useState(false);
+
+  // Check if user has seen the "early" note before
+  useEffect(() => {
+    const hasSeen = localStorage.getItem('hasSeenEarlyNote');
+    if (!hasSeen) {
+      // Small delay for better impact
+      const timer = setTimeout(() => setShowNote(true), 1200);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const dismissNote = () => {
+    setShowNote(false);
+    localStorage.setItem('hasSeenEarlyNote', 'true');
+  };
 
   const zoomTo = useCallback((newView: ViewState) => {
     setView(newView);
@@ -40,6 +56,43 @@ const App: React.FC = () => {
     <div className="relative w-screen h-screen overflow-hidden bg-white text-black font-sans cursor-none select-none">
       <PaintCursor />
       
+      {/* Post-it Note Pop-up */}
+      <AnimatePresence>
+        {showNote && view === 'HOME' && (
+          <motion.div
+            initial={{ y: -50, opacity: 0, rotate: -10, scale: 0.9 }}
+            animate={{ y: 0, opacity: 1, rotate: -3, scale: 1 }}
+            exit={{ y: 40, opacity: 0, scale: 0.8, rotate: 5 }}
+            transition={{ type: 'spring', damping: 12, stiffness: 90 }}
+            className="fixed inset-0 flex items-center justify-center pointer-events-none z-[200] px-6"
+          >
+            <div 
+              onClick={dismissNote}
+              className="relative w-full max-w-[280px] aspect-square bg-[#fff98a] p-8 shadow-[15px_15px_35px_rgba(0,0,0,0.15)] flex flex-col items-center justify-center text-center border-b-2 border-r-2 border-black/10 pointer-events-auto transform transition-transform hover:scale-105 active:scale-95 group"
+            >
+              {/* Tape visual - semi-transparent "scotch tape" */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-20 h-10 bg-white/50 backdrop-blur-[1px] rotate-[-2deg] z-10 border border-white/20"></div>
+              
+              <p className="handwritten text-4xl md:text-5xl font-bold leading-[1.1] text-black/90">
+                You’re early — explore anyway.
+              </p>
+              
+              {/* Corner Fold visual */}
+              <div className="absolute bottom-0 right-0 w-0 h-0 border-t-[30px] border-t-transparent border-r-[30px] border-r-black/5"></div>
+              
+              <div className="absolute bottom-4 left-0 right-0 opacity-40">
+                <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.3em]">[ Click to close ]</span>
+              </div>
+              
+              {/* X Close icon */}
+              <div className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center opacity-30 group-hover:opacity-100 transition-opacity">
+                 <span className="text-2xl font-black">×</span>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <AnimatePresence>
         {view !== 'HOME' && (
           <motion.div
