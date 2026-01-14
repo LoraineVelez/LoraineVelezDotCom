@@ -73,12 +73,12 @@ export const PRODUCTS: Product[] = [
   },
   { 
     id: 'sh4', 
-    name: 'COMING SOON', 
-    price: '---', 
+    name: 'Cuteness Aggression', 
+    price: '$55.00', 
     type: 'PRINT', 
-    image: 'https://i.ibb.co/GQsc9s4M/SHOP-ITEM-COMING-SOON.png',
-    description: '12 x 12 archival print, frame ready',
-    availability: 'COMING_SOON'
+    image: 'https://i.ibb.co/7tY40s9b/bunny-print-signed.png',
+    description: '10x14 archival print, frame ready',
+    availability: 'IN_STOCK'
   },
   { 
     id: 'sh5', 

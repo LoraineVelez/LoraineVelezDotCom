@@ -12,19 +12,14 @@ const App: React.FC = () => {
   const [view, setView] = useState<ViewState>('HOME');
   const [showNote, setShowNote] = useState(false);
 
-  // Check if user has seen the "early" note before
+  // Show the note on every load after a short delay
   useEffect(() => {
-    const hasSeen = localStorage.getItem('hasSeenEarlyNote');
-    if (!hasSeen) {
-      // Small delay for better impact
-      const timer = setTimeout(() => setShowNote(true), 1200);
-      return () => clearTimeout(timer);
-    }
+    const timer = setTimeout(() => setShowNote(true), 1200);
+    return () => clearTimeout(timer);
   }, []);
 
   const dismissNote = () => {
     setShowNote(false);
-    localStorage.setItem('hasSeenEarlyNote', 'true');
   };
 
   const zoomTo = useCallback((newView: ViewState) => {
