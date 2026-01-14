@@ -1,3 +1,4 @@
+
 import { Product } from '../types';
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -80,7 +81,6 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const isPositive = status === 'IN_STOCK' || status === 'AVAILABLE';
   const glowClass = isPositive ? 'bg-green-400 animate-glow' : 'bg-red-500 animate-glow-red';
   
-  // Determine labels based on type and status
   let statusText = '';
   if (isPrint || isOther) {
     statusText = status === 'IN_STOCK' ? 'IN STOCK' : 'COMING SOON';
@@ -94,14 +94,12 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   return (
     <div className="group flex flex-col h-full bg-white transition-all duration-500">
       <div className="aspect-[4/5] bg-gray-50 overflow-hidden relative mb-4 border-[1px] border-black/5">
-         {/* Status Overlays - Now spread to opposite sides */}
+         {/* Status Overlays */}
          <div className="absolute top-3 left-3 right-3 flex justify-between items-start z-10">
-            {/* Type Label (Left) */}
             <div className="bg-black text-white px-2 py-1 text-[8px] font-black uppercase tracking-widest w-fit shadow-sm">
                 {typeLabel}
             </div>
 
-            {/* Status Indicator (Right) */}
             <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm border border-black px-2 py-1 shadow-sm">
                 <div className={`w-2 h-2 rounded-full ${glowClass}`}></div>
                 <span className="text-[8px] font-black uppercase tracking-widest leading-none">{statusText}</span>
