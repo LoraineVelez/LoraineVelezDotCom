@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -217,7 +218,23 @@ const InfoSection: React.FC<Props> = ({ isVisible }) => {
         </section>
 
         {/* Mobile-Friendly Footer Icons */}
-        <footer className="pt-6 pb-12 border-t border-black/5 flex flex-col items-center space-y-6">
+        <footer className="pt-12 pb-16 border-t-4 border-black flex flex-col items-center space-y-10">
+           {/* Buy Me a Coffee Integration */}
+           <div className="flex flex-col items-center space-y-4">
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-30">Support the journey</span>
+              <a 
+                href="https://buymeacoffee.com/lvlcreativestudio" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="marker-box px-10 py-4 bg-white hover:bg-black hover:text-white transition-all transform active:scale-95 flex items-center space-x-4 group cursor-none shadow-lg"
+              >
+                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4v-2z" />
+                </svg>
+                <span className="text-xs font-black uppercase tracking-[0.3em]">Buy me a coffee</span>
+              </a>
+           </div>
+
            <div className="flex items-center justify-center space-x-6 md:space-x-10">
               <a href="https://www.instagram.com/loraineswwworld" target="_blank" rel="noopener noreferrer" className="p-1 hover:scale-125 transition-transform" aria-label="Instagram">
                 <svg className="w-6 h-6 fill-black" viewBox="0 0 24 24">
